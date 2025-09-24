@@ -10,14 +10,13 @@ def get_website_status(url: str) -> None:
 
         # Information
         status_code: int = response.status_code
-        request_method: str = response.request.method
+        request_method: str | None = response.request.method
         headers: CaseInsensitiveDict[str] = response.headers
         content_type: str = headers.get('Content-Type', 'Unknown')
         server: str = headers.get('Server', 'Unknown')
         response_time: float = response.elapsed.total_seconds()
 
-
-
+        # Print the information
         print(f"URL: {url}")
         print(f"Status Code: {status_code}")
         print(f"Request Method: {request_method}")
