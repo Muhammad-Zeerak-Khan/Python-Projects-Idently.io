@@ -8,9 +8,6 @@ def open_file(file_path: str) -> str:
         return text
 
 
-# Get the total chars incl spaces ,exc spaces, total spaces, total words
-
-
 def text_analyzer(text: str) -> dict[str, int]:
     result: dict[str, int] = {
         "total_chars_with_spaces": len(text),
